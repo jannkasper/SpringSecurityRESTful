@@ -26,8 +26,8 @@ public class Bootstrap implements CommandLineRunner {
 
         System.out.println("Users Loaded: " + userRepository.count());
 
-        userRepository.delete(userRepository.findByCustomerName("stacy"));
-        userRepository.delete(userRepository.findByCustomerName("jan"));
+        userRepository.delete(userRepository.findByCustomerName("stacy").get());
+        userRepository.delete(userRepository.findByCustomerName("jan").get());
 
         System.out.println("Users Loaded: " + userRepository.count());
 

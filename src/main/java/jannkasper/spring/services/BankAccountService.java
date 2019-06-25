@@ -1,20 +1,20 @@
 package jannkasper.spring.services;
 
-import jannkasper.spring.api.model.UserDTO;
+import jannkasper.spring.api.model.BankAccountDTO;
 
 import java.util.List;
 
-public interface BankAccountService <T> {
+public interface BankAccountService {
 
-    List<T> getAllAccounts();
+    List<BankAccountDTO> getAllAccounts();
 
-    UserDTO getAccountById(String id);
+    BankAccountDTO getAccountById(String id);
 
-    UserDTO getAccountByAccountNumber(String accountNumber);
+    BankAccountDTO getAccountByAccountNumber(String accountNumber);
 
-    UserDTO createNewAccount(UserDTO userDTO);
+    BankAccountDTO createNewAccount(BankAccountDTO bankAccountDTO);
 
-    UserDTO saveAccountByDTO(String id, UserDTO userDTO);
+    BankAccountDTO saveAccountByDTO(String id, BankAccountDTO bankAccountDTO);
 
     void deleteAccountById(String id);
 }
