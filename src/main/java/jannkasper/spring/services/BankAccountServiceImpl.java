@@ -2,7 +2,7 @@ package jannkasper.spring.services;
 
 import jannkasper.spring.api.mapper.BankAccountMapper;
 import jannkasper.spring.api.model.BankAccountDTO;
-import jannkasper.spring.api.model.UserDTO;
+import jannkasper.spring.controllers.UserController;
 import jannkasper.spring.domain.BankAccount;
 import jannkasper.spring.repositories.BankAccountRepository;
 import org.springframework.stereotype.Service;
@@ -89,6 +89,6 @@ public class BankAccountServiceImpl implements BankAccountService {
     }
 
     private String getCustomerUrl(String id) {
-        return UserController.BASE_URL + "/account/" + id;
+        return UserController.BASE_URL + "/" + id;
     }
 }

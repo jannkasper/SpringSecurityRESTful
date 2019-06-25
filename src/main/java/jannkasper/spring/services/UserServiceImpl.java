@@ -2,6 +2,7 @@ package jannkasper.spring.services;
 
 import jannkasper.spring.api.mapper.UserMapper;
 import jannkasper.spring.api.model.UserDTO;
+import jannkasper.spring.controllers.UserController;
 import jannkasper.spring.domain.User;
 import jannkasper.spring.repositories.UserRepository;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDTO> getAllUsers() {
-        userRepository
+        return userRepository
                 .findAll()
                 .stream()
                 .map(user -> {
@@ -32,7 +33,6 @@ public class UserServiceImpl implements UserService {
                     return userDTO;
                 })
                 .collect(Collectors.toList());
-        return null;
     }
 
     @Override
@@ -99,6 +99,6 @@ public class UserServiceImpl implements UserService {
 
     }
     private String getCustomerUrl(String id) {
-        return UserController.BASE_URL + "/user/" + id;
+        return UserController.BASE_URL + "/" + id;
     }
 }
